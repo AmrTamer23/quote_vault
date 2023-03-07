@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quote_vault/views/widgets/quotes_list_view.dart';
 
 import 'custom_app_bar.dart';
 import 'custom_quote_item.dart';
@@ -11,9 +12,11 @@ class QuotesViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 50),
       child: Column(
-        children: [
+        children: const [
           CustomAppBar(),
-          QuoteItem(),
+          Expanded(
+            child: QuotesListView(),
+          )
         ],
       ),
     );
