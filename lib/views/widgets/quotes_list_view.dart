@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_quote_item.dart';
+import 'quote_item.dart';
 
 class QuotesListView extends StatelessWidget {
   const QuotesListView({super.key});

@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quote_vault/views/widgets/custom_search_icon.dart';
+import 'package:quote_vault/views/widgets/custom_button_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  const CustomAppBar({super.key, this.title, this.icon});
 
+  final String? title;
+  final IconData? icon;
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
+      children: [
         Text(
-          "Quotes Vault",
-          style: TextStyle(fontSize: 28),
+          title!,
+          style: const TextStyle(fontSize: 28),
         ),
-        Spacer(),
-        CustomSearchIcon(),
+        const Spacer(),
+        CustomButtonIcon(icon: icon),
       ],
     );
   }
