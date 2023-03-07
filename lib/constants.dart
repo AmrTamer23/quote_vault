@@ -1,0 +1,1 @@
+const kQuoteBox = 'QuoteBox';

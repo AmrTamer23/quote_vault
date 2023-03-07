@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:quote_vault/constants.dart';
 import 'package:quote_vault/views/quotes_view.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+  await Hive.openBox(kQuoteBox);
   runApp(const QuotesVault());
 }
 
