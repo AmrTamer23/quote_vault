@@ -7,13 +7,17 @@ class QuotesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 10,
-        itemBuilder: (index, context) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: const QuoteItem(),
-          );
-        });
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: ListView.builder(
+          itemCount: 10,
+          padding: EdgeInsets.all(0),
+          itemBuilder: (index, context) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              child: QuoteItem(),
+            );
+          }),
+    );
   }
 }
