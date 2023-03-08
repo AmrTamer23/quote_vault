@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quote_vault/cubits/add_quote_cubit/cubit/add_quote_cubit.dart';
 import 'package:quote_vault/models/quote_model.dart';
-
+import 'package:intl/intl.dart';
 import 'custom_button.dart';
 import 'custom_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -74,11 +74,13 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
                   onTap: () {
                     if (formkey.currentState!.validate()) {
                       formkey.currentState!.save();
+                      var now = DateTime.now();
+                      var formattedDate = DateFormat('MMM d, yyy').format(now);
                       var quoteModel = QuoteModel(
                           quote: quote!,
                           author: author!,
                           source: source!,
-                          date: DateTime.now().toString(),
+                          date: formattedDate,
                           color: Colors.blueAccent.value);
                       cubit.addQuote(quoteModel);
                     } else {

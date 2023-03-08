@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quote_vault/cubits/add_quote_cubit/cubit/add_quote_cubit.dart';
 import 'package:bloc/bloc.dart';
+import 'package:quote_vault/cubits/quotes_cubit/cubit/quotes_cubit.dart';
 import 'package:quote_vault/views/widgets/custom_button.dart';
 import 'package:quote_vault/views/widgets/custom_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,7 @@ class AddQuoteBottomSheet extends StatelessWidget {
         listener: (context, state) {
           if (state is AddQuoteFailed) {
           } else if (state is AddQuoteDone) {
+            BlocProvider.of<QuotesCubit>(context).fetchAllQuotes();
             Navigator.pop(context);
           }
         },
