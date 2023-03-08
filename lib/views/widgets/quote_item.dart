@@ -6,6 +6,8 @@ import 'package:quote_vault/views/widgets/custom_button.dart';
 import '../../models/quote_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'lang_detector.dart';
+
 class QuoteItem extends StatelessWidget {
   const QuoteItem({
     super.key,
@@ -92,24 +94,28 @@ class QuoteItem extends StatelessWidget {
             ListTile(
               // ignore: prefer_const_constructors
               title: Text(
-                quoteModel.quote,
-                style: const TextStyle(
-                    fontStyle: FontStyle.italic, fontWeight: FontWeight.w600),
+                isEnglish(quoteModel.quote)
+                    ? '"${quoteModel.quote}"'
+                    : '«${quoteModel.quote}»',
+                maxLines: 10,
+                textDirection: !isEnglish(quoteModel.quote)
+                    ? TextDirection.rtl
+                    : TextDirection.ltr,
+                style: TextStyle(
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w500,
+                    fontFamily:
+                        !isEnglish(quoteModel.quote) ? 'Kufam' : 'Poppins'),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: Text(
                   "${quoteModel.author}, ${quoteModel.source}",
-                  style: TextStyle(color: Colors.white.withOpacity(.6)),
+                  style: TextStyle(
+                      color: Colors.white.withOpacity(.6),
+                      fontFamily:
+                          !isEnglish(quoteModel.quote) ? 'Kufam' : 'Poppins'),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 24),
-              child: Text(
-                quoteModel.date,
-                style: TextStyle(
-                    color: Colors.white.withOpacity(.3), fontSize: 16),
               ),
             ),
           ],

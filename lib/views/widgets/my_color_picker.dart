@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
-Color? showColorPickerDialog(BuildContext context) {
+Color? ColorPickerDialog(BuildContext context) {
   Color selectedColor = Colors.white; // default color
 
   showDialog(

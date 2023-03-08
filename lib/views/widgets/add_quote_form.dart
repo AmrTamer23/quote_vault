@@ -68,12 +68,13 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
           ),
           CustomButton(
             text: "Pick a Color",
+            color: Colors.blueGrey,
             onTap: () async {
               color = await showColorPickerDialog(context, Colors.black);
             },
           ),
           Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
+            padding: const EdgeInsets.only(bottom: 8.0, top: 16),
             child: BlocBuilder<AddQuoteCubit, AddQuoteState>(
               builder: (context, state) => CustomButton(
                   text: "Add Quote",
