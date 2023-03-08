@@ -10,18 +10,21 @@ class CustomTextField extends StatelessWidget {
       this.hint,
       this.obscure = false,
       this.maxlines = 1,
-      this.onSaved});
+      this.onSaved,
+      this.initialValue = ''});
 
   final Function(String)? onChanged;
   final String? hint;
   final bool? obscure;
   final int? maxlines;
+  final String? initialValue;
   final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return TextFormField(
       onSaved: onSaved,
+      initialValue: initialValue,
       obscureText: obscure!,
       onChanged: onChanged,
       maxLines: maxlines,

@@ -3,10 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_vault/views/widgets/custom_button_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, this.title, this.icon});
+  const CustomAppBar({super.key, this.title, this.icon, this.onTap});
 
   final String? title;
   final IconData? icon;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +17,10 @@ class CustomAppBar extends StatelessWidget {
           style: const TextStyle(fontSize: 28),
         ),
         const Spacer(),
-        CustomButtonIcon(icon: icon),
+        CustomButtonIcon(
+          icon: icon,
+          onTap: onTap,
+        ),
       ],
     );
   }

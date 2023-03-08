@@ -3,6 +3,7 @@ import 'package:quote_vault/cubits/add_quote_cubit/cubit/add_quote_cubit.dart';
 import 'package:quote_vault/models/quote_model.dart';
 import 'package:intl/intl.dart';
 import 'custom_button.dart';
+import 'package:flex_color_picker/flex_color_picker.dart';
 import 'custom_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,6 +21,7 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   String? quote, author, source;
+  Color? color = Colors.black;
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<AddQuoteCubit>(context);
@@ -64,6 +66,12 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
           const SizedBox(
             height: 30,
           ),
+          CustomButton(
+            text: "Pick a Color",
+            onTap: () async {
+              color = await showColorPickerDialog(context, Colors.black);
+            },
+          ),
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: BlocBuilder<AddQuoteCubit, AddQuoteState>(
@@ -81,7 +89,7 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
                           author: author!,
                           source: source!,
                           date: formattedDate,
-                          color: Colors.blueAccent.value);
+                          color: color!.value);
                       cubit.addQuote(quoteModel);
                     } else {
                       autovalidateMode = AutovalidateMode.always;

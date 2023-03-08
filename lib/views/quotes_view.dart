@@ -22,6 +22,7 @@ class QuotesView extends StatelessWidget {
               });
         },
         child: const Icon(Icons.add),
+        backgroundColor: Colors.amber,
       ),
       body: const QuotesViewBody(),
     );

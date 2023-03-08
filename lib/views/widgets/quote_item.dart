@@ -34,7 +34,7 @@ class QuoteItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text("Do You Want To Delete This Quote ?"),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Row(
@@ -75,8 +75,11 @@ class QuoteItem extends StatelessWidget {
             }));
       },
       onDoubleTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const EditQuoteView()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return EditQuoteView(
+            quoteModel: quoteModel,
+          );
+        }));
       },
       child: Container(
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
@@ -100,12 +103,6 @@ class QuoteItem extends StatelessWidget {
                   style: TextStyle(color: Colors.white.withOpacity(.6)),
                 ),
               ),
-              trailing: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    FontAwesomeIcons.trash,
-                    size: 24,
-                  )),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 24),

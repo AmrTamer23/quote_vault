@@ -5,15 +5,15 @@ part 'quote_model.g.dart';
 @HiveType(typeId: 0)
 class QuoteModel extends HiveObject {
   @HiveField(0)
-  final String quote;
+  String quote;
   @HiveField(1)
-  final String author;
+  String author;
   @HiveField(2)
-  final String source;
+  String source;
   @HiveField(3)
   final String date;
   @HiveField(4)
-  final int color;
+  int color;
 
   QuoteModel(
       {required this.quote,
