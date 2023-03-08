@@ -3,8 +3,19 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_vault/views/edit_quote_view.dart';
 
 class QuoteItem extends StatelessWidget {
-  const QuoteItem({super.key});
+  const QuoteItem(
+      {super.key,
+      required this.quote,
+      required this.author,
+      required this.source,
+      required this.date,
+      required this.color});
 
+  final String quote;
+  final String author;
+  final String source;
+  final String date;
+  final int color;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,21 +26,21 @@ class QuoteItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
         decoration: BoxDecoration(
-            color: Colors.black26, borderRadius: BorderRadius.circular(16)),
+            color: Color(color), borderRadius: BorderRadius.circular(16)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
               // ignore: prefer_const_constructors
               title: Text(
-                "Flutter Tips",
+                quote,
                 style: const TextStyle(
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.w600),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 5),
                 child: Text(
-                  "Bla Bla Bla Bla",
+                  "$author, $source",
                   style: TextStyle(color: Colors.white.withOpacity(.6)),
                 ),
               ),
@@ -43,7 +54,7 @@ class QuoteItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 24),
               child: Text(
-                "May 21, 2023",
+                date,
                 style: TextStyle(
                     color: Colors.white.withOpacity(.3), fontSize: 16),
               ),

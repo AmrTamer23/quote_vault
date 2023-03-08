@@ -15,6 +15,7 @@ class QuotesView extends StatelessWidget {
           showModalBottomSheet(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16)),
+              isScrollControlled: true,
               context: context,
               builder: (context) {
                 return const AddQuoteBottomSheet();
