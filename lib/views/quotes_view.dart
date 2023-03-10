@@ -21,8 +21,8 @@ class QuotesView extends StatelessWidget {
                 return const AddQuoteBottomSheet();
               });
         },
-        child: const Icon(Icons.add),
         backgroundColor: Colors.amber,
+        child: const Icon(Icons.add),
       ),
       body: const QuotesViewBody(),
     );

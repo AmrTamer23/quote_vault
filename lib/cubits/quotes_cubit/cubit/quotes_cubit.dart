@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:quote_vault/models/quote_model.dart';
+import 'package:quote_vault/views/widgets/lang_detector.dart';
 
 import '../../../constants.dart';
 
@@ -21,14 +24,18 @@ class QuotesCubit extends Cubit<QuotesState> {
 
   List<QuoteModel> searchedQuotes = [];
 
-  searchQuote(word) {
+  searchQuote(String word) {
     searchedQuotes = [];
-    searchedQuotes +=
-        quoteBox.values.where((quote) => quote.quote.contains(word)).toList();
-    searchedQuotes +=
-        quoteBox.values.where((quote) => quote.author.contains(word)).toList();
-    searchedQuotes +=
-        quoteBox.values.where((quote) => quote.source.contains(word)).toList();
+
+    searchedQuotes = quoteBox.values
+        .where(
+            (quote) => quote.quote.toLowerCase().contains(word.toLowerCase()))
+        .where(
+            (quote) => quote.author.toLowerCase().contains(word.toLowerCase()))
+        .where(
+            (quote) => quote.source.toLowerCase().contains(word.toLowerCase()))
+        .toList();
+
     emit(QuoteSearchDone());
   }
 }

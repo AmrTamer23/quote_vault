@@ -17,6 +17,8 @@ class QuotesListView extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: ListView.builder(
+              physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
               itemCount: cubit.quotesList.length,
               padding: const EdgeInsets.all(0),
               itemBuilder: (context, index) {

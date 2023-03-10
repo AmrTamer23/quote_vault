@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:quote_vault/cubits/quotes_cubit/cubit/quotes_cubit.dart';
+
 import 'package:quote_vault/views/edit_quote_view.dart';
 import 'package:quote_vault/views/widgets/custom_button.dart';
 import '../../models/quote_model.dart';
@@ -51,6 +52,7 @@ class QuoteItem extends StatelessWidget {
                                       quoteModel.delete();
                                       Navigator.pop(context);
                                       cubit.fetchAllQuotes();
+                                      cubit.searchedQuotes = [];
                                       cubit.searchQuote('');
                                     }),
                               ),

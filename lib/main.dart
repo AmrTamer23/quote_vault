@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quote_vault/constants.dart';
 import 'package:quote_vault/cubits/add_quote_cubit/cubit/add_quote_cubit.dart';
 import 'package:quote_vault/cubits/quotes_cubit/cubit/quotes_cubit.dart';
+
 import 'package:quote_vault/models/quote_model.dart';
 import 'package:quote_vault/views/quotes_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';

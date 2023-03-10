@@ -43,6 +43,8 @@ class _EditQuoteViewBodyState extends State<EditQuoteViewBody> {
               widget.quoteModel.save();
               Navigator.pop(context);
               BlocProvider.of<QuotesCubit>(context).fetchAllQuotes();
+              BlocProvider.of<QuotesCubit>(context).searchedQuotes = [];
+              BlocProvider.of<QuotesCubit>(context).searchQuote('');
             },
           ),
           const SizedBox(

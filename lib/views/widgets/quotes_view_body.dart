@@ -3,6 +3,7 @@ import 'package:quote_vault/cubits/quotes_cubit/cubit/quotes_cubit.dart';
 import 'package:quote_vault/views/search_quote_view.dart';
 import 'package:quote_vault/views/widgets/quotes_list_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'custom_app_bar.dart';
 import 'quote_item.dart';
 

@@ -11,9 +11,12 @@ class SearchQuotesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<QuotesCubit>(context);
+    cubit.searchedQuotes = [];
     return BlocBuilder<QuotesCubit, QuotesState>(
       builder: (context, state) {
         return ListView.builder(
+            physics: const BouncingScrollPhysics(
+                parent: AlwaysScrollableScrollPhysics()),
             itemCount: cubit.searchedQuotes.length,
             padding: const EdgeInsets.all(0),
             itemBuilder: (context, index) {
