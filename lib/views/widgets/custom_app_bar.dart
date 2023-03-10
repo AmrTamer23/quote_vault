@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:quote_vault/views/widgets/custom_button_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
