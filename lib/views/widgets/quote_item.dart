@@ -51,6 +51,7 @@ class QuoteItem extends StatelessWidget {
                                       quoteModel.delete();
                                       Navigator.pop(context);
                                       cubit.fetchAllQuotes();
+                                      cubit.searchQuote('');
                                     }),
                               ),
                             ),

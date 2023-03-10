@@ -13,3 +13,12 @@ class QuoteFailed extends QuotesState {
   final String eMessage;
   QuoteFailed({required this.eMessage});
 }
+
+class QuoteSearchLoading extends QuotesState {}
+
+class QuoteSearchDone extends QuotesState {}
+
+class QuoteSearchFailed extends QuotesState {
+  final String eMessage;
+  QuoteSearchFailed({required this.eMessage});
+}

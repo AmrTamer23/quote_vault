@@ -12,9 +12,23 @@ class QuotesCubit extends Cubit<QuotesState> {
 
   List<QuoteModel> quotesList = [];
 
+  var quoteBox = Hive.box<QuoteModel>(kQuoteBox);
+
   fetchAllQuotes() {
-    var quoteBox = Hive.box<QuoteModel>(kQuoteBox);
     quotesList = quoteBox.values.toList();
     emit(QuoteDone());
+  }
+
+  List<QuoteModel> searchedQuotes = [];
+
+  searchQuote(word) {
+    searchedQuotes = [];
+    searchedQuotes +=
+        quoteBox.values.where((quote) => quote.quote.contains(word)).toList();
+    searchedQuotes +=
+        quoteBox.values.where((quote) => quote.author.contains(word)).toList();
+    searchedQuotes +=
+        quoteBox.values.where((quote) => quote.source.contains(word)).toList();
+    emit(QuoteSearchDone());
   }
 }
