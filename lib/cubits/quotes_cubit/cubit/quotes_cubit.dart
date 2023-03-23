@@ -25,17 +25,16 @@ class QuotesCubit extends Cubit<QuotesState> {
   List<QuoteModel> searchedQuotes = [];
 
   searchQuote(String word) {
+    emit(QuoteSearchLoading());
     searchedQuotes = [];
 
     searchedQuotes = quoteBox.values
-        .where(
-            (quote) => quote.quote.toLowerCase().contains(word.toLowerCase()))
-        .where(
-            (quote) => quote.author.toLowerCase().contains(word.toLowerCase()))
-        .where(
-            (quote) => quote.source.toLowerCase().contains(word.toLowerCase()))
+        .where((quote) =>
+            quote.quote.toLowerCase().contains(word.toLowerCase()) ||
+            quote.author.toLowerCase().contains(word.toLowerCase()) ||
+            quote.source.toLowerCase().contains(word.toLowerCase()))
         .toList();
-
+    print(searchedQuotes);
     emit(QuoteSearchDone());
   }
 }

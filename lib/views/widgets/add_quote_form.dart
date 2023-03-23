@@ -33,7 +33,7 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
           CustomTextField(
             hint: "Write The Quote Here",
             maxlines: 5,
-            onSaved: (value) {
+            onChanged: (value) {
               quote = value;
             },
           ),
@@ -45,7 +45,7 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
               Expanded(
                 child: CustomTextField(
                   hint: "Author",
-                  onSaved: (value) {
+                  onChanged: (value) {
                     author = value;
                   },
                 ),
@@ -56,7 +56,7 @@ class _AddNewQuoteFormState extends State<AddNewQuoteForm> {
               Expanded(
                 child: CustomTextField(
                   hint: "Source",
-                  onSaved: (value) {
+                  onChanged: (value) {
                     source = value;
                   },
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -10,7 +11,7 @@ class CustomTextField extends StatelessWidget {
       this.hint,
       this.obscure = false,
       this.maxlines = 1,
-      this.onSaved,
+      this.onSubmit,
       this.initialValue = ''});
 
   final Function(String)? onChanged;
@@ -18,24 +19,19 @@ class CustomTextField extends StatelessWidget {
   final bool? obscure;
   final int? maxlines;
   final String? initialValue;
-  final void Function(String?)? onSaved;
+  final void Function(String?)? onSubmit;
   @override
   Widget build(BuildContext context) {
+    TextEditingController controller =
+        TextEditingController(text: initialValue);
     // ignore: prefer_const_constructors
-    return TextFormField(
-      onSaved: onSaved,
-      initialValue: initialValue,
+    return TextField(
+      controller: controller,
+      onSubmitted: onSubmit,
       obscureText: obscure!,
       onChanged: onChanged,
       maxLines: maxlines,
       cursorColor: Colors.amber,
-      validator: (data) {
-        if (data!.isEmpty) {
-          return "Shouldn't Be Empty";
-        } else {
-          return null;
-        }
-      },
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: const TextStyle(color: Colors.white54),
