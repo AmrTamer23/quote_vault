@@ -1,16 +1,18 @@
-# quote_vault
+Ever made a highlight and never come back to it?
 
-A new Flutter project.
+Well, Here comes THE QUOTE VAULT.
 
-## Getting Started
+In This Project, I used :
 
-This project is a starting point for a Flutter application.
+✅ Local Non-SQL Database (HIVE).
 
-A few resources to get you started if this is your first Flutter project:
+✅ StateMangement => BlocCubit.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+✅ Clean Code.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+_____________________________________________________________________________________________________
+![1](https://user-images.githubusercontent.com/122938074/227379347-fd4e5057-a2df-4999-94aa-c19e2098e853.png)
+
+![2](https://user-images.githubusercontent.com/122938074/227379471-5b8cfde1-323f-4bdd-ac64-ce82223cc91f.png)
+
+![3](https://user-images.githubusercontent.com/122938074/227379489-97b391e2-c8ee-48b8-ab4a-1fcfcc10c7ad.png)
