@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quote_vault/cubits/quotes_cubit/cubit/quotes_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quote_vault/models/quote_model.dart';
 
 import 'quote_item.dart';
 

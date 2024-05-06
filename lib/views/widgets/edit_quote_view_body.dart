@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:quote_vault/models/quote_model.dart';
 import 'package:quote_vault/views/widgets/custom_app_bar.dart';
 import 'package:quote_vault/views/widgets/custom_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quote_vault/views/widgets/my_color_picker.dart';
-import '../../cubits/add_quote_cubit/cubit/add_quote_cubit.dart';
 import '../../cubits/quotes_cubit/cubit/quotes_cubit.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
-import 'my_color_picker.dart';
 import 'custom_button.dart';
-import 'package:intl/intl.dart';
 
 class EditQuoteViewBody extends StatefulWidget {
   const EditQuoteViewBody({super.key, required this.quoteModel});

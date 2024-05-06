@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:quote_vault/cubits/quotes_cubit/cubit/quotes_cubit.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quote_vault/views/widgets/custom_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:quote_vault/views/widgets/quote_item.dart';
 import 'package:quote_vault/views/widgets/search_quotes_list_view.dart';
 
 class SearchQuoteViewBody extends StatefulWidget {
